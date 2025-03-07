@@ -1,8 +1,8 @@
 // Task 1: Creating Base Structure (all in html file)
 
 // Task 2: Adding employee cards dynamically
-employeeContainerG = document.getElementById("employeeContainer")
-employeeContainerQ = document.querySelector("employeeContainer")
+const employeeContainerG = document.getElementById("employeeContainer")
+const employeeContainerQ = document.querySelector("employeeContainer")
 
 function createEmployeeCard(name, position) {
     const newCard = document.createElement("div")
@@ -15,3 +15,11 @@ function createEmployeeCard(name, position) {
 createEmployeeCard("Jason Miller", "Supply Chain Manager")
 createEmployeeCard("Galo Rebelo", "Financial Analyst")
 createEmployeeCard("Eric Torres", "Senior Consultant")
+
+// Task 3: Converting NodeLists to Arrays for Bulk Updates
+const allCards = document.querySelectorAll(".employee-card")
+allCardsArray = Array.from(allCards)
+
+allCardsArray.forEach(card => {
+    card.style.backgroundColor = "plum"
+})
