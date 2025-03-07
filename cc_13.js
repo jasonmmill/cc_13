@@ -23,3 +23,16 @@ allCardsArray = Array.from(allCards)
 allCardsArray.forEach(card => {
     card.style.backgroundColor = "plum"
 })
+
+// Task 4: Implementing Removal of Employee Cards with Event Bubbling 
+employeeContainerG.addEventListener("click", () => {
+    console.log("Employee container clicked.")
+})
+
+const employeeCard = document.querySelectorAll(".employee-card")
+employeeCard.forEach(card => {
+    card.addEventListener("click", (c) => {
+        employeeContainerG.removeChild(card)
+        console.log("Employee card removed.")
+        c.stopPropagation()
+})})
